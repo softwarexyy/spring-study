@@ -1,4 +1,4 @@
-# Spring IOC
+# 一、Spring IOC
 ## 简单的SpringIOC概念（spring-ioc01项目）
     (1) service层实现dao层，不再在service层中指定特定的dao层实现类，推迟到调用service层的外部程序，再指定具体的dao层实现类；
     (2) 以上过程简单原理是在service对象实现时，使用setter方法动态注入；
@@ -66,7 +66,7 @@
  **具体可见 static-proxy项目，包含了静态代理方法**
  **动态代理包含了静态代理所有的优点，并且针对一个接口，只需要一个InvocationHandler类，即使接口有多种实现。因此动态代理是针对一簇Service(一簇是指实现了相同接口的一组类)**
  
-# Spring AOP
+# 二、Spring AOP
 **概念:**  
 * 切入点: 程序中需要从中插入执行别的操作的位置；
 * 切片: 执行的操作所在的类；
@@ -78,7 +78,7 @@
 - (2)自定义实现AOP【主要是自定义切面类，此类中包含各通知方法，再在xml中配置切入点、以及前置/后置】；
 - (3)使用注解
 
-# Spring整合Mybatis
+# 三、Spring整合Mybatis
 ### 方式一，手动实现Mapper接口，由SqlSessionTemplate注入实现SqlSession对象
 - （1）spring bean中配置数据源 dataSource;
 - （2）sqlSessionFactory: 未整合之前，代码里直接new一个SqlSessionFactory对象，并在new的时候指明mybatis-config.xml配置文件；
@@ -99,7 +99,7 @@ applicationContext.xml配置如下bean：
 - **使用第二种方法时，sqlSessionTemplate无需在applicationContext.xml中配置相关bean了**
 
 
-# Spring事务
+# 四、Spring事务
 此处将事务作为一个切面，切入到各数据库操作方法上。因此以下展示事务和AOP的整合。
 ```xml
 <!-- =========== 以下: 用AOP实现事务 ========= -->
