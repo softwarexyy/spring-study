@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 简单对象 -->
+    <bean id="hello" class="com.yancy.pojo.Hello">
+        <property name="message" value="Hello World"/>
+    </bean>
+
+    <bean id="helloDao" class="com.yancy.dao.HelloDaoImpl"/>
+    <bean id="helloalice" class="com.yancy.dao.HelloDaoAliceImpl"/>
+    <bean id="helloyancy" class="com.yancy.dao.HelloDaoYancyImpl"/>
+
+    <bean id="helloService" class="com.yancy.service.HelloServiceImpl">
+        <property name="helloDao" ref="helloalice"/>
+    </bean>
+
+    <bean id="helloService2" class="com.yancy.service.HelloServiceImpl" scope="prototype">
+        <property name="helloDao" ref="helloalice"/>
+    </bean>
+</beans>

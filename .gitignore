@@ -1,0 +1,9 @@
+# Project exclude paths
+/spring-annotation-01/target/
+/spring-aop-01/target/
+/spring-ioc01/target/
+/spring-mybatis/target/
+/spring-study-xml-01/target/
+/spring-xml-02/target/
+/spring-xml-03/target/
+/static-proxy/target/

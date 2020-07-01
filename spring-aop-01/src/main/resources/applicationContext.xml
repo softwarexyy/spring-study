@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.yancy.service.UserServiceImpl"/>
+    <bean id="beforeLog" class="com.yancy.log.BeforeLog"/>
+    <bean id="afterLog" class="com.yancy.log.AfterLog"/>
+    <bean id="diy" class="com.yancy.log.DIYLog"/>
+
+<!--    &lt;!&ndash; 配置AOP &ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash; 方式一：Spring API实现 &ndash;&gt;-->
+<!--        &lt;!&ndash; 定义切入点 &ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.yancy.service.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash; 需要执行的bean &ndash;&gt;-->
+<!--        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+
+<!--        &lt;!&ndash; 方式二:自定义切面 &ndash;&gt;-->
+<!--        <aop:aspect ref="diy">-->
+<!--            <aop:pointcut id="pointcut2" expression="execution(* com.yancy.service.UserServiceImpl.*(..))"/>-->
+<!--            <aop:before method="diyBeforeLog" pointcut-ref="pointcut2"/>-->
+<!--            <aop:after method="diyAfterLog" pointcut-ref="pointcut2"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+
+    <!-- 方法三： 开启注解支持 -->
+    <bean id="annotationLog" class="com.yancy.log.AnnotationAOPLog"/>
+    <aop:aspectj-autoproxy/>
+
+</beans>

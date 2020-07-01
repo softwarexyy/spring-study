@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yancy.dao.UserMapper">
+
+    <!-- 结果集映射，JavaBean和数据表字段名称不一致的时候用 -->
+    <resultMap id="UserResultMap" type="user">
+        <!-- column代表数据库表字段 property代表实体类属性，只需声明名称不一样的列，这里都一致、只是示例一下而已 -->
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+    </resultMap>
+
+    <select id="selectUser" resultMap="UserResultMap">
+        select * from USER;
+    </select>
+
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="org.yancy.entity.Student">
+        <property name="name" value="Yancy"/>
+        <property name="books">
+            <list>
+                <value>英语书</value>
+                <value>C++ primer</value>
+                <value>Java编程思想</value>
+            </list>
+        </property>
+        <property name="cert">
+            <map>
+                <entry key="身份证" value="340122199999991212"/>
+                <entry key="学生证" value="0911610609"/>
+            </map>
+        </property>
+        <property name="hobbies">
+            <set>
+                <value>弹吉他</value>
+                <value>打游戏</value>
+            </set>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="身高">180</prop>
+                <prop key="体重">76</prop>
+                <prop key="性格">开朗</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
