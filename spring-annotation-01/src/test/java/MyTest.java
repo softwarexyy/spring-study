@@ -1,11 +1,11 @@
 import com.yancy.config.Config;
 import com.yancy.service.IUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.logging.Logger;
-
+@Slf4j
 public class MyTest {
 
     @Test
@@ -17,7 +17,7 @@ public class MyTest {
 //        IUserService userService = (IUserService) context.getBean("userServiceImpl");
         String result = userService.getNameByCrdlsNo("18811363588");
 
-        Logger logger = Logger.getLogger("YancyLogger");
-        logger.info(result);
+//        Logger logger = Logger.getLogger("YancyLogger");
+        log.info(result);
     }
 }
