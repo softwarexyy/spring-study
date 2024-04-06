@@ -7,3 +7,12 @@
 /spring-xml-02/target/
 /spring-xml-03/target/
 /static-proxy/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr

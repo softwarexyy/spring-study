@@ -12,7 +12,9 @@ public class MyTest {
     public void test() {
         ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);  // 通过注解获取spring上下文容器
 
+        // 获取bean对象
         IUserService userService = context.getBean("userServiceImpl", IUserService.class);
+//        IUserService userService = (IUserService) context.getBean("userServiceImpl");
         String result = userService.getNameByCrdlsNo("18811363588");
 
         Logger logger = Logger.getLogger("YancyLogger");
